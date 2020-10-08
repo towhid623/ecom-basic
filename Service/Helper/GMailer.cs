@@ -14,7 +14,7 @@ namespace Service.Helper
         public static void SendMail(VmContact model)
         {
             var message = new MailMessage();
-            message.To.Add(new MailAddress("radiantsoftbd@gmail.com"));  // replace with valid value 
+            message.To.Add(new MailAddress("yourmail@gmail.com"));  // replace with valid value 
             message.From = new MailAddress(model.Email);  // replace with valid value
             message.Subject = model.Subject;
             message.Body = "Contact Request From: "+model.Name+"\nSubject: "+model.Subject+"\nMobile: "+model.MobileNumber+"\nEmail: "+model.Email+"\nMessage: "+model.Message;
@@ -24,8 +24,8 @@ namespace Service.Helper
             {
                 var credential = new NetworkCredential
                 {
-                    UserName = "radiantbulk@gmail.com",  // replace with valid value
-                    Password = "Radiantbulk@123"  // replace with valid value
+                    UserName = "yourmail@gmail.com",  // replace with valid value
+                    Password = "yourpassword"  // replace with valid value
                 };
                 smtp.Credentials = credential;
                 smtp.Host = "smtp.gmail.com";
