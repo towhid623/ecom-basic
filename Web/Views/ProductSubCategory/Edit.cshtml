@@ -1,0 +1,51 @@
+﻿@model Service.ViewModels.VmProductSubCategoryAdd
+@{
+    ViewBag.Title = "Edit Sub-Category";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card-custom">
+    <h4 class="text-center">Add Sub-Category</h4>
+
+    @using (Html.BeginForm("Edit", "ProductSubCategory", FormMethod.Post, new { @id = "mainForm", enctype = "multipart/form-data", @autocomplete = "off", onSubmit = "return ValidateFormData()" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="row form-group">
+            <div class="col-sm-4">
+                <label>Category</label>
+                @Html.HiddenFor(model => model.ProductSubCategoryHeaderId, new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.ProductCategoryHeaderId, new SelectList(ViewBag.CategoryList, "Id", "Name"), "Select", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ProductCategoryHeaderId, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-sm-4">
+                <label>Sub-Category Name</label>
+                @Html.TextBoxFor(model => model.ProductSubCategoryName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ProductSubCategoryName, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-sm-4">
+                <label>Image</label>
+                <input type="file" name="file" class="form-control" />
+            </div>
+        </div>
+        <div class="text-right">
+            <button class="btn btn-success" type="submit">Submit</button>
+        </div>
+    }
+</div>
+@section scripts{
+    <script>
+    var successMsg = '@TempData["SuccessMsg"]';
+    var failedMsg = '@TempData["FailedMsg"]';
+    $(document).ready(function () {
+        if (successMsg != null && successMsg != "" && typeof successMsg != "undefined") {
+            alert(successMsg);
+        }
+        if (failedMsg != null && failedMsg != "" && typeof failedMsg != "undefined") {
+            alert(failedMsg);
+        }
+    });
+    </script>
+}
+

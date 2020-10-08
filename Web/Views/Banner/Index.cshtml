@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Banners";
+}
+
+<h4 class="text-center">Banners</h4>
+<div class="card-custom text-right">
+    <a href="/Banner/Add">
+        <button class="btn btn-primary mb-3" type="button">Add Banner</button>
+    </a>
+    <table id="bannerListTable" class="table table-hover text-center">
+        <thead>
+            <tr>
+                <th>Seial No</th>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+@section scripts{
+    <script src="https://cdn.datatables.net/plug-ins/1.10.19/api/fnPagingInfo.js"></script>
+    <script>
+        var oTable;
+        var successMsg = '@TempData["SuccessMsg"]';
+        var failedMsg = '@TempData["FailedMsg"]';
+        $(document).ready(function () {
+            if (successMsg != null && successMsg != "" && typeof successMsg != "undefined") {
+                alert(successMsg);
+            }
+            if (failedMsg != null && failedMsg != "" && typeof failedMsg != "undefined") {
+                alert(failedMsg);
+            }
+            oTable = $('#bannerListTable').DataTable({
+                "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
+                "pageLength": 25,
+                "processing": true,
+                "serverSide": false,
+                "ordering": false,
+                "ajax": "/Banner/AjaxBanerList",
+                "columns": [
+                    { "data": "BannerHeaderId" },
+                    {
+                        "data": "Image",
+                        "render": function (data, type, row, meta) {
+                            return '<span class="table-img"><img src="' + row.BannerImgUrl + '"alt="" /></span>';
+
+                        }
+                    },
+                    { "data": "BannerTitle" },
+                    { "data": "BannerDescription" },
+                    {
+                        "render": function (data, type, row) {
+                            return "<a href='/Banner/Delete/" + row.ProductHeaderId +"'><button type='button' class='btn btn-danger'>Delete</Button></a>";
+                        }
+                    }
+                ],
+                "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+                    var page = this.fnPagingInfo().iPage;
+                    var length = this.fnPagingInfo().iLength;
+                    var index = (page * length + (iDisplayIndex + 1));
+                    $('td:eq(0)', nRow).html(index);
+                }
+            });
+        });
+    </script>
+}
+
+

@@ -1,0 +1,57 @@
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Repository\bin\Debug\Repository.dll.config
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Repository\bin\Debug\Repository.dll
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Repository\bin\Debug\Repository.pdb
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Repository\bin\Debug\Entities.dll
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Repository\bin\Debug\EntityFramework.dll
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Repository\bin\Debug\EntityFramework.SqlServer.dll
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Repository\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Repository\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Repository\bin\Debug\Entities.pdb
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Repository\bin\Debug\Entities.dll.config
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Repository\bin\Debug\EntityFramework.xml
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Repository\bin\Debug\EntityFramework.SqlServer.xml
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Repository\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Repository\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Repository\obj\Debug\Repository.csprojAssemblyReference.cache
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Repository\obj\Debug\Repository.csproj.CoreCompileInputs.cache
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Repository\obj\Debug\Repository.csproj.CopyComplete
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Repository\obj\Debug\Repository.dll
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Repository\obj\Debug\Repository.pdb
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Repository\bin\Debug\Repository.dll.config
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Repository\bin\Debug\Repository.dll
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Repository\bin\Debug\Repository.pdb
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Repository\bin\Debug\Entities.dll
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Repository\bin\Debug\EntityFramework.dll
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Repository\bin\Debug\EntityFramework.SqlServer.dll
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Repository\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Repository\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Repository\bin\Debug\Entities.pdb
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Repository\bin\Debug\Entities.dll.config
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Repository\bin\Debug\EntityFramework.xml
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Repository\bin\Debug\EntityFramework.SqlServer.xml
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Repository\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Repository\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Repository\obj\Debug\Repository.csprojAssemblyReference.cache
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Repository\obj\Debug\Repository.csproj.CoreCompileInputs.cache
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Repository\obj\Debug\Repository.csproj.CopyComplete
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Repository\obj\Debug\Repository.dll
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Repository\obj\Debug\Repository.pdb
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Repository\bin\Debug\Repository.dll.config
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Repository\bin\Debug\Repository.dll
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Repository\bin\Debug\Repository.pdb
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Repository\bin\Debug\Entities.dll
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Repository\bin\Debug\EntityFramework.dll
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Repository\bin\Debug\EntityFramework.SqlServer.dll
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Repository\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Repository\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Repository\bin\Debug\Entities.pdb
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Repository\bin\Debug\Entities.dll.config
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Repository\bin\Debug\EntityFramework.xml
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Repository\bin\Debug\EntityFramework.SqlServer.xml
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Repository\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Repository\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Repository\obj\Debug\Repository.csprojAssemblyReference.cache
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Repository\obj\Debug\Repository.csproj.CoreCompileInputs.cache
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Repository\obj\Debug\Repository.csproj.CopyComplete
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Repository\obj\Debug\Repository.dll
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Repository\obj\Debug\Repository.pdb

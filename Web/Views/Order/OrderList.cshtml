@@ -1,0 +1,56 @@
+﻿@model Entities.Models.Customer
+@{
+    ViewBag.Title = "OrderList";
+    Layout = "~/Views/Shared/_LayoutPublic.cshtml";
+}
+
+<br />
+<section class="custom-spacing body-bg">
+    <div class="p-category wrapper container custom-spacing">
+        <h6 style="text-align: center;color:#4a00a4;font-size: 18px;">
+            <b>
+                <i class="fa fa-gg" aria-hidden="true"></i>
+                Order List
+                <i class="fa fa-gg" aria-hidden="true"></i>
+            </b>
+        </h6>
+        <div class="row">
+            <table class="table table-bordered table-hover">
+                <thead class="bg-info  white-font-color">
+                    <tr>
+                        <td>Order ID</td>
+                        <td>Order Date</td>
+                        <td>Items</td>
+                        <td>Total Price</td>
+                        <td>Status</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var order in Model.Order.OrderByDescending(o => o.OrderHeaderId))
+                    {
+                        <tr>
+                            <td><a href="/Order/Details/@order.OrderHeaderId">@order.OrderNo</a></td>
+                            <td>@order.OrderDate.ToString("dd MMM yyyy")</td>
+                            <td>
+                                @string.Join(",", order.OrderItem.Select(s => s.Product.ProductName));
+                            </td>
+                            <td>@order.OrderItem.Select(s => s.Total).Sum()</td>
+                            <td>
+                                @{
+                                    foreach (var item in ViewBag.OrderStatus)
+                                    {
+                                        if (item.Id == order.Status)
+                                        {
+                                            <span>@item.Name</span>
+                                        }
+                                    }
+                                }
+                                <span></span>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

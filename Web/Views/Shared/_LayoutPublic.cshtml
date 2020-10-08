@@ -1,0 +1,404 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - E-Commerce</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Modak&display=swap" rel="stylesheet">
+    @*<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">*@
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Istok+Web&display=swap" rel="stylesheet">
+    <link href="~/Content/Public/style.css" rel="stylesheet" />
+
+</head>
+<body>
+    <section class="bg-info white-font-color">
+        <nav class="navbar navbar-expand-lg white-font-color">
+            <a class="navbar-brand white-font-color" href="/Home/Index">@ViewBag.CompanyName</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon white-font-color"><i class="fas fa-bars"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    @foreach (var category in ViewBag.CategoryList)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link white-font-color" href="/Home/ProductCategory/@category.ProductCategoryHeaderId">@category.ProductCategoryName <span class="sr-only">(current)</span></a>
+                        </li>
+                    }
+                </ul>
+                <div class="cart-btn white-font-color mr-2" style="cursor:pointer">
+                    <i class="fa" style="font-size:24px">&#xf07a;</i>
+                    <span class='badge badge-warning' id='lblCartCount'> 0 </span>
+                </div>
+                @if (@ViewBag.LoggedInUser != null)
+                {
+                    <div class=" mr-2" style="cursor:pointer">
+                        <a class=" white-font-color" style="text-decoration:none!important" href="/Order/OrderList/@ViewBag.LoggedInUser.ReferrenceId">My Orders</a>
+                    </div>
+                }
+                <form class="form-inline my-2 my-lg-0 mr-2" id="searchForm">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" id="searchProduct">
+                    <button class="btn btn-outline-primary white-font-color my-2 my-sm-0" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
+                @if (@ViewBag.LoggedInUser != null)
+                {
+                    <div class="mr-2" style="cursor:pointer">
+                        <a class=" white-font-color" style="text-decoration:none!important" href="/Account/LogOff">Log Out</a>
+                    </div>
+                }
+                else
+                {
+                    <div class=" mr-2" style="cursor:pointer">
+                        <a class=" white-font-color" style="text-decoration:none!important" href="/Account/Login">Log In</a>
+                    </div>
+                }
+            </div>
+        </nav>
+    </section>
+    <div style="background-color: mintcream;">
+        @RenderBody()
+    </div>
+    @*<section class="body-bg custom-spacing footer">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-4">
+                        <span class="f-header">  Category </span>
+                        @{int footerCategory = 0;}
+                        <ul class="ul-custom">
+                            @foreach (var category in ViewBag.CategoryList)
+                            {
+                                <li class="li-custom"><a href="#" class="custom-a">@category.ProductCategoryName </a> </li>
+                                footerCategory++;
+                                if (footerCategory >= 5)
+                                {
+                                    break;
+                                }
+                            }
+                        </ul>
+                    </div>
+                    <div class="col-4">
+                        <div class="site-logo ">
+                            <img src="@ViewBag.Logo" style="width: 25%;" />
+                        </div>
+
+                        <div class="social-icons ul-custom">
+                            <li class="custom-icons li-custom "><a href="http://@ViewBag.FacebookUrl" target="_blank" class="custom-a"><i class="fab fa-facebook icon-mg"></i> </a></li>
+                            <li class="custom-icons li-custom"><a href="http://@ViewBag.InstagramUrl" target="_blank" class="custom-a"><i class="fab fa-instagram icon-mg"></i> </a></li>
+                            <li class="custom-icons li-custom"><a href="http://@ViewBag.TwitterUrl" target="_blank" class="custom-a"><i class="fab fa-twitter "></i></a></li>
+                            <li class="custom-icons li-custom"></li>
+                        </div>
+
+                    </div>
+                    <div class="col-4 ">
+                        <span class="f-header">  Packages </span>
+                        <ul class="ul-custom">
+                            <li class="li-custom"><a href="#" class="custom-a">Random </a> </li>
+                            <li class="li-custom"><a href="#" class="custom-a">Random </a> </li>
+                            <li class="li-custom"><a href="#" class="custom-a">Random </a> </li>
+                            <li class="li-custom"><a href="#" class="custom-a"> Random</a> </li>
+                            <li class="li-custom"><a href="#" class="custom-a"> Random</a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>*@
+    <div class="container">
+        <div class="row">
+            <div class=" col-lg-8 offset-lg-2 text-info border border-white mt-4">
+                <p style="text-align: center; color: #4a00a4; font-size: 18px;">
+                    <b>
+                        <i class="fa fa-gg" aria-hidden="true"></i>
+                        CONTACT US
+                        <i class="fa fa-gg" aria-hidden="true"></i>
+
+                    </b>
+                </p>
+                <br>
+                @{Html.RenderAction("ContactPartial", "Contact"); }
+
+
+            </div>
+            <!-- form area end -->
+        </div>
+    </div>
+    <br>
+    <footer class="footer" style="background-color: #312c2c;">
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 spacing">
+                    <p style="text-align: center; color: white;font-family: 'ROBOTO', sans-serif">
+                        <b> ADDRESS</b>
+                    </p>
+                    <p style="text-align: center; color: white;font-family: 'Istok Web', sans-serif;">
+                        @ViewBag.CompanyAddress
+                    </p>
+                </div>
+                <div class="col-md-4 spacing">
+
+                    <img style="width: 30%;
+                                          margin-left: 35%;" src="@ViewBag.Logo" alt="">
+
+                </div>
+                <DIV class="col-md-4 spacing">
+                    <p style="color: white;font-family: 'Merriweather Sans', sans-serif; text-align: center;">
+                        <b>CONTACT</b>
+                    </p>
+                    <p style="color: white;font-family: 'Istok Web', sans-serif; text-align: center;">
+                        <a href="#" style="color:white; text-decoration: none;">
+                            @ViewBag.CompanyEmail
+                        </a>
+                    <p style="color: white; text-align: center;"> @ViewBag.CompanyMobile</p>
+                    </p>
+                    <ul>
+                        <li><a href="http://@ViewBag.FacebookUrl"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="http://@ViewBag.TwitterUrl"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="http://@ViewBag.InstagramUrl"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="http://@ViewBag.CompanyEmail"><i class="fa fa-google-plus-official" aria-hidden="true"></i></a></li>
+                    </ul>
+                </DIV>
+            </div>
+        </div>
+        <br>
+    </footer>
+
+    <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Cart</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table id="cartTable" style="width:100%" class="table table-bordered table-hover">
+                        <thead class="">
+                            <tr>
+                                <th>
+                                    Product
+                                </th>
+                                <th>
+                                    Quantity
+                                </th>
+                                <th>
+                                    Rate
+                                </th>
+                                <th>
+                                    Total
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary checkout">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade " id="orderConfirmModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Order Confirmation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label>Full Name</label>
+                            <input type="text" id="customerName" class="form-control" />
+                            <span id="spncustomerName" style="display:none" class="text-danger"></span>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label>Mobile Number</label>
+                            <input type="text" id="mobileNumber" class="form-control" />
+                            <span id="spnmobileNumber" style="display:none" class="text-danger"></span>
+
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label>Email Address</label>
+                            <input type="text" id="emailAddress" class="form-control" />
+                            <span id="spnemailAddress" style="display:none" class="text-danger"></span>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label>Payment Method</label>
+                            <input type="text" id="paymentMethod" class="form-control" value="Cash On Delivery" readonly />
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label>Password</label>
+                            <input type="password" id="password" class="form-control" />
+                            <span id="spnpassword" style="display:none" class="text-danger"></span>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label>Confirm Password</label>
+                            <input type="password" id="confirmPassword" class="form-control" />
+                            <span id="spnconfirmPassword" style="display:none" class="text-danger"></span>
+                        </div>
+                        <div class="col-sm-12 form-group">
+                            <label>Shipping Address</label>
+                            <textarea id="shippingAddress" class="form-control" rows="2"></textarea>
+                            <span id="spnshippingAddress" style="display:none" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary confirmOrder">Confirm Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/Public/slick.min.js"></script>
+    <script src="~/Scripts/Public/Session.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script>
+        var allProducts = @Html.Raw(Json.Encode(ViewBag.ProductList));
+        var loggedInUser = @Html.Raw(Json.Encode(ViewBag.LoggedInUser));
+        var registeredEmails = @Html.Raw(Json.Encode(ViewBag.RegisterdEmails));
+        var customerName = "";
+        var mobileNumber = "";
+        var emailAddress = "";
+        var password = "";
+        var confirmPassword = "";
+        var shippingAddress = "";
+        var products = [];
+
+        $(document).ready(function () {
+            CartCount();
+        });
+
+        function CartCount() {
+            $('#lblCartCount').html('');
+            var productList = jQuery.parseJSON(localStorage.getItem('products'));
+            if (productList == null) {
+                $('#lblCartCount').html(0);
+            } else {
+                $('#lblCartCount').html(productList.length);
+            }
+        }
+
+        $('.cart-btn').click(function () {
+            var productList = jQuery.parseJSON(localStorage.getItem('products'));
+
+            $('#cartTable tbody').html('');
+            $.each(productList, function (i, j) {
+                var productName = allProducts.find(f => f.ProductHeaderId == j.ProductHeaderId).ProductName;
+                var rate = allProducts.find(f => f.ProductHeaderId == j.ProductHeaderId).Price;
+                var row = '<tr><td>' + productName + '</td><td>' + j.Quantity + '</td><td>' + rate + '</td><td>' + (parseFloat(j.Quantity) * parseFloat(rate)).toFixed(2) + '</td></tr>';
+                $('#cartTable tbody').append(row);
+            });
+            $('#cartModal').modal('show');
+        });
+
+        $('.checkout').click(function () {
+            var productList = jQuery.parseJSON(localStorage.getItem('products'));
+            if (productList != null) {
+                $('#cartModal').modal('hide');
+                if (loggedInUser == null || loggedInUser.UserType != 1) {
+                    $('#orderConfirmModal').modal('show');
+                } else {
+                    ConfirmOrder();
+                }
+            }
+
+        });
+
+        $('.confirmOrder').click(function () {
+            var valid = ValidateRegistrationForm();
+            if (valid) {
+                ConfirmOrder();
+            }
+
+        });
+
+        function ConfirmOrder() {
+                var productList = jQuery.parseJSON(localStorage.getItem('products'));
+            if (productList != null) {
+                var customer = { CustomerHeaderId: 0, CustomerName: customerName, MobileNumber: mobileNumber, EmailAddress: emailAddress, Address: shippingAddress, Password: password, ConfirmPassword: confirmPassword };
+                var data = { Customer: customer, Purchases: productList };
+                $.post('/Order/Add', { model: data }, function (response) {
+                    $('#orderConfirmModal').modal('hide');
+                    localStorage.removeItem('products');
+                    window.open('/Order/OrderList/' + response, '_self');
+                });
+            }
+
+        }
+
+        function ValidateRegistrationForm(){
+            var valid = true;
+            customerName = $('#customerName').val();
+            mobileNumber = $('#mobileNumber').val();
+            emailAddress = $('#emailAddress').val();
+            password = $('#password').val();
+            confirmPassword = $('#confirmPassword').val();
+            shippingAddress = $('#shippingAddress').val();
+            $('#spncustomerName').hide();
+            $('#spnmobileNumber').hide();
+            $('#spnemailAddress').hide();
+            $('#spnpassword').hide();
+            $('#spnconfirmPassword').hide();
+            $('#spnshippingAddress').hide();
+            if (customerName == null || customerName == "" || typeof customerName == "undefined") {
+                valid = false;
+                $('#spncustomerName').html('Please enter your full name here');
+                $('#spncustomerName').show();
+            }
+            if (mobileNumber == null || mobileNumber == "" || typeof mobileNumber == "undefined") {
+                valid = false;
+                $('#spnmobileNumber').html('Please enter your mobile number here');
+                $('#spnmobileNumber').show();
+            }
+            if (emailAddress == null || emailAddress == "" || typeof emailAddress == "undefined") {
+                valid = false;
+                $('#spnemailAddress').html('Please enter your email address here');
+                $('#spnemailAddress').show();
+            } else if (registeredEmails.find(f => f.EmailAddress == emailAddress) != undefined && registeredEmails.find(f => f.EmailAddress == emailAddress) != null) {
+                $('#spnemailAddress').html('This email address is already registered');
+                $('#spnemailAddress').show();
+            }
+            if (password == null || password == "" || typeof password == "undefined") {
+                valid = false;
+                $('#spnpassword').html('Please enter your password here');
+                $('#spnpassword').show();
+            }
+            if (confirmPassword == null || confirmPassword == "" || typeof confirmPassword == "undefined") {
+                valid = false;
+                $('#spnconfirmPassword').html('Please re-enter your password here');
+                $('#spnconfirmPassword').show();
+            }
+            else if (confirmPassword != password) {
+                valid = false;
+                $('#spnconfirmPassword').html('Password is not matching');
+                $('#spnconfirmPassword').show();
+            }
+            if (shippingAddress == null || shippingAddress == "" || typeof shippingAddress == "undefined") {
+                valid = false;
+                $('#spnshippingAddress').html('Please enter your shipping address here');
+                $('#spnshippingAddress').show();
+            }
+            return valid;
+        }
+
+        $("#searchForm").submit(function () {
+            var searchVal = $("#searchProduct").val();
+
+        });
+    </script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

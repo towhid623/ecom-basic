@@ -1,0 +1,15 @@
+﻿@model Entities.Models.Order
+@{
+    ViewBag.Title = "Order Confirmation";
+    Layout = "~/Views/Shared/_LayoutPublic.cshtml";
+}
+
+
+<section class="custom-spacing body-bg">
+    <div class="p-category wrapper container custom-spacing">
+        <h1 class="header text-center">Order List</h1>
+        <div class="row">
+            <h2>Thank You. Your Order ID: #@Model.OrderNo</h2>
+        </div>
+    </div>
+</section>

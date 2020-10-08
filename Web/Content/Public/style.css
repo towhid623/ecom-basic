@@ -1,0 +1,258 @@
+
+
+
+
+.white-font-color{
+    color:#fff;
+}
+
+.white-font-color:hover{
+    color:#fff;
+}
+
+.bg-light {
+    background-color: #350e6f !important;
+}
+
+a {
+    text-decoration: none!important;
+}
+
+    a:hover {
+        text-decoration: none!important;
+    }
+
+    a:focus {
+        text-decoration: none!important;
+    }
+
+.black-font-color {
+    color: #212529;
+}
+
+.black-font-color:hover {
+    color: #212529;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(0,0,0,.5);
+    color: snow;
+}
+
+.font-family {
+    font-family: 'Raleway', sans-serif;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #270340;
+    border-color: #007bff;
+}
+
+li {
+    list-style: none;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: small;
+}
+
+.border-white {
+    border-color: mintcream !important;
+}
+
+
+
+.product-card {
+    height: 290px;
+}
+
+.hvrbox,
+.hvrbox * {
+    box-sizing: border-box;
+}
+
+.hvrbox {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    height: 217px;
+}
+
+    .hvrbox img {
+        max-width: 100%;
+    }
+
+    .hvrbox .hvrbox-layer_bottom {
+        display: block;
+    }
+
+    .hvrbox .hvrbox-layer_top {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        padding: 15px;
+        -moz-transition: all 0.4s ease-in-out 0s;
+        -webkit-transition: all 0.4s ease-in-out 0s;
+        -ms-transition: all 0.4s ease-in-out 0s;
+        transition: all 0.4s ease-in-out 0s;
+    }
+
+    .hvrbox:hover .hvrbox-layer_top,
+    .hvrbox.active .hvrbox-layer_top {
+        opacity: 1;
+    }
+
+    .hvrbox .hvrbox-text {
+        text-align: center;
+        font-size: 18px;
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -moz-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    .hvrbox .hvrbox-text_mobile {
+        font-size: 15px;
+        border-top: 1px solid rgb(179, 179, 179); /* for old browsers */
+        border-top: 1px solid rgba(179, 179, 179, 0.7);
+        margin-top: 5px;
+        padding-top: 2px;
+        display: none;
+    }
+
+    .hvrbox.active .hvrbox-text_mobile {
+        display: block;
+    }
+
+.card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    background-color: #f1f4e9;
+}
+
+.hvrbox .hvrbox-layer_slideup {
+    -moz-transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+}
+
+.hvrbox:hover .hvrbox-layer_slideup,
+.hvrbox.active .hvrbox-layer_slideup {
+    -moz-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.spacing {
+    margin-bottom: 20px;
+}
+
+
+
+.checked {
+    color: orange;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer ul {
+    display: flex;
+    margin-left: 15%;
+}
+
+    .footer ul li {
+        list-style: none;
+        margin: 0 10px;
+    }
+
+        .footer ul li a {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 30px;
+            color: #666;
+            transition: 0.5s;
+        }
+
+            .footer ul li a:before {
+                content: '';
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                background: #ffee10;
+                transition: .5s;
+                transform: scale(.9s);
+                z-index: -1;
+            }
+
+            .footer ul li a:hover:before {
+                transform: scale(1.1);
+                box-shadow: 0 0 15px #ffee10;
+            }
+
+            .footer ul li a:hover {
+                color: #ffee10;
+                text-shadow: 0 0 5px #ffee10;
+            }
+
+
+
+
+
+
+
+
+
+
+
+.bg-info {
+    background-color: #4a00a4 !important;
+}
+
+.text-info {
+    color: #000 !important;
+}

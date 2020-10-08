@@ -1,0 +1,124 @@
+﻿@model Service.ViewModels.VmProductAdd
+@{
+    ViewBag.Title = "Add Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card-custom">
+    <h4 class="text-center">Add Product</h4>
+    @using (Html.BeginForm("Add", "Product", FormMethod.Post, new { @id = "mainForm", enctype = "multipart/form-data", @autocomplete = "off", onSubmit = "return ValidateFormData()" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="row form-group">
+            <div class="col-sm-4">
+                <label>Category</label>
+                @Html.HiddenFor(model => model.ProductHeaderId, new { @class = "form-control", Value = "0" })
+                @Html.DropDownListFor(model => model.ProductCategoryHeaderId, new SelectList(ViewBag.CategoryList, "Id", "Name"), "Select", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ProductCategoryHeaderId, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-sm-4">
+                <label>Sub-Category</label>
+                @Html.DropDownList("ProductSubCategoryHeaderId", Enumerable.Empty<SelectListItem>(), "Select", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ProductSubCategoryHeaderId, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-sm-4">
+                <label>Product Code</label>
+                @Html.TextBoxFor(model => model.ProductCode, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ProductCode, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-4">
+                <label>Product Name</label>
+                @Html.TextBoxFor(model => model.ProductName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ProductName, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-sm-4">
+                <label>Primary Image</label>
+                <input type="file" name="Image1" class="form-control" />
+            </div>
+            <div class="col-sm-4">
+                <label>Secondary Image(1)</label>
+                <input type="file" name="Image2" class="form-control" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-4">
+                <label>Secondary Image(2)</label>
+                <input type="file" name="Image3" class="form-control" />
+            </div>
+            <div class="col-sm-4">
+                <label>Brand</label>
+                @Html.DropDownListFor(model => model.BrandId, new SelectList(ViewBag.BrandList, "Id", "Name"), "Select", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.BrandId, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-sm-4">
+                <label>Unit</label>
+                @Html.DropDownListFor(model => model.UnitId, new SelectList(ViewBag.UnitList, "Id", "Name"), "Select", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.UnitId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-12">
+                <label>Description</label>
+                @Html.TextAreaFor(model => model.Description, new { @class = "form-control", rows = "2" })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-sm-4">
+                <label>Price</label>
+                @Html.TextBoxFor(model => model.Rate, new { @class = "form-control", type = "number" })
+                @Html.ValidationMessageFor(model => model.Rate, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-sm-4">
+                <label>Model Number</label>
+                @Html.TextBoxFor(model => model.ModelNo, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ModelNo, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-sm-4">
+            </div>
+        </div>
+        <div class="text-right">
+            <button class="btn btn-success" type="submit">Submit</button>
+        </div>
+    }
+</div>
+@section scripts{
+    <script>
+        var successMsg = '@TempData["SuccessMsg"]';
+        var failedMsg = '@TempData["FailedMsg"]';
+        var temp = '@Html.Raw(Json.Encode(ViewBag.SubCategoryList))';
+        var subCategoryList = JSON.parse(temp);
+        $(document).ready(function () {
+        if (successMsg != null && successMsg != "" && typeof successMsg != "undefined") {
+            alert(successMsg);
+        }
+        if (failedMsg != null && failedMsg != "" && typeof failedMsg != "undefined") {
+            alert(failedMsg);
+            }
+            CategoryWiseSubCategory();
+        });
+
+        function CategoryWiseSubCategory() {
+            var categoryId = $("#ProductCategoryHeaderId").val();
+            $("#ProductSubCategoryHeaderId").html("");
+            $("#ProductSubCategoryHeaderId").append("<option value=''>Select</option>");
+            if (categoryId == null || categoryId == "" || categoryId == 0 || typeof categoryId == "undefined") {
+            } else {
+                var thisSubCategories = subCategoryList.filter(f => f.ProductCategoryHeaderId == categoryId);
+                $.each(thisSubCategories, function (key, value) {
+                    $("#ProductSubCategoryHeaderId").append("<option value='" + value.ProductSubCategoryHeaderId + "'>" + value.ProductSubCategoryName + "</option>");
+                });
+            }
+        }
+
+        $("#ProductCategoryHeaderId").change(function () {
+            CategoryWiseSubCategory();
+        });
+    </script>
+}
+

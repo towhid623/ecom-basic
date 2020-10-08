@@ -1,0 +1,60 @@
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Service\bin\Debug\Service.dll.config
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Service\bin\Debug\Service.dll
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Service\bin\Debug\Service.pdb
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Service\bin\Debug\Entities.dll
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Service\bin\Debug\EntityFramework.dll
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Service\bin\Debug\EntityFramework.SqlServer.dll
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Service\bin\Debug\Repository.dll
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Service\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Service\bin\Debug\Entities.pdb
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Service\bin\Debug\Entities.dll.config
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Service\bin\Debug\Repository.pdb
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Service\bin\Debug\Repository.dll.config
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Service\bin\Debug\EntityFramework.xml
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Service\bin\Debug\EntityFramework.SqlServer.xml
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Service\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Service\obj\Debug\Service.csprojAssemblyReference.cache
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Service\obj\Debug\Service.csproj.CopyComplete
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Service\obj\Debug\Service.dll
+D:\D\D\My Personal Document\Project\ecom-basic\ecom-basic\Service\obj\Debug\Service.pdb
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Service\bin\Debug\Service.dll.config
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Service\bin\Debug\Service.dll
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Service\bin\Debug\Service.pdb
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Service\bin\Debug\Entities.dll
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Service\bin\Debug\EntityFramework.dll
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Service\bin\Debug\EntityFramework.SqlServer.dll
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Service\bin\Debug\Repository.dll
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Service\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Service\bin\Debug\Entities.pdb
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Service\bin\Debug\Entities.dll.config
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Service\bin\Debug\Repository.pdb
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Service\bin\Debug\Repository.dll.config
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Service\bin\Debug\EntityFramework.xml
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Service\bin\Debug\EntityFramework.SqlServer.xml
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Service\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Service\obj\Debug\Service.csprojAssemblyReference.cache
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Service\obj\Debug\Service.csproj.CopyComplete
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Service\obj\Debug\Service.dll
+D:\D\D\My Personal Document\Project\ecom-nurnobi\Service\obj\Debug\Service.pdb
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Service\bin\Debug\Service.dll.config
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Service\bin\Debug\Service.dll
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Service\bin\Debug\Service.pdb
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Service\bin\Debug\Entities.dll
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Service\bin\Debug\EntityFramework.dll
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Service\bin\Debug\EntityFramework.SqlServer.dll
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Service\bin\Debug\Repository.dll
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Service\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Service\bin\Debug\Entities.pdb
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Service\bin\Debug\Entities.dll.config
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Service\bin\Debug\Repository.pdb
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Service\bin\Debug\Repository.dll.config
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Service\bin\Debug\EntityFramework.xml
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Service\bin\Debug\EntityFramework.SqlServer.xml
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Service\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Service\obj\Debug\Service.csprojAssemblyReference.cache
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Service\obj\Debug\Service.csproj.CopyComplete
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Service\obj\Debug\Service.dll
+D:\D\D\My Personal Document\Google Drive\Project\Public\ecom-basic\Service\obj\Debug\Service.pdb

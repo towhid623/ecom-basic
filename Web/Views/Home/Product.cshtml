@@ -1,0 +1,200 @@
+﻿@model Entities.Models.Product
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Views/Shared/_LayoutPublic.cshtml";
+}
+<br /><br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img  id="zoom_01" src="@Model.ImageUrl1"  data-zoom-image="@Model.ImageUrl1" alt=""  width="100%" style="height: 270px;" >
+        </div>
+        <div class="col-md-6">
+            <span style="display:none" class="productId">@Model.ProductHeaderId</span>
+
+            <h6 style="font-family: 'Raleway', sans-serif;    font-size: 30px;">
+                @Model.ProductName
+            </h6>
+            <p style="color: #777777; font-size: 15px;">
+                Product Code: @Model.ProductCode <br> Price: Tk @Model.Rate
+            </p>
+            <input class="form-control w-50 float-left qty-input text-center" placeholder="Quantity" required type="number" value="1" min="1" max="100" /> <button type="button" class="btn btn-outline-warning ml-3 buy-btn">
+                <i class="fa fa-shopping-cart" aria-hidden="true" style="font-size: x-large;margin-block: -1px;"></i>
+            </button> <br>
+
+            <br>
+            <p style=" font-size: 15px;">
+                Call For Details: @ViewBag.CompanyMobileNumber
+            </p>
+            <h6 style="font-family: 'Raleway', sans-serif;    font-size: 20px;">
+                PRODUCT INFO
+            </h6>
+            <P style="color: #777777; font-family: 'Raleway', sans-serif; font-size: 15px;">
+                @Model.Description
+            </P>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <i class="fa fa-truck" aria-hidden="true" style="font-size: xxx-large;margin-left: 44%;color: #4a00a4;"></i>
+            <a href="#" style="text-decoration: none;"><p style="text-align: center; color: #222222; font-size: large;"><b>COUNTRYWIDE DELIVERY</b></p></a>
+            <P style="text-align: center; color: #4a4a4a; font-size: unset;">Within 3 Working Days</P>
+        </div>
+        <div class="col-md-4">
+            <i class="fa fa-headphones" aria-hidden="true" style="font-size: xxx-large;margin-left: 44%;color: #4a00a4;"></i>
+            <a href="#" style="text-decoration: none;"><p style="text-align: center; color: #222222; font-size: large;"><b>ALWAY SUPPORT</b></p></a>
+            <P style="text-align: center; color: #4a4a4a; font-size: unset;">@ViewBag.CompanyMobileNumber</P>
+        </div>
+        <div class="col-md-4">
+            <i class="fa fa-btc" aria-hidden="true" style="font-size: xxx-large;margin-left: 44%;color: #4a00a4;"></i>
+            <a href="#" style="text-decoration: none;"><p style="text-align: center; color: #222222; font-size: large;"><b>SECURE PAYMENT</b></p></a>
+            <P style="text-align: center; color: #4a4a4a; font-size: unset;">Cash On Delivery</P>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<section class="custom-spacing body-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5 text-right">
+                <div class="p-img">
+                    <img id="zoom_01" src='@Model.ImageUrl1' data-zoom-image="@Model.ImageUrl1" width="100%" style="height: 270px;" />
+                </div>
+            </div>
+            <div class="col-sm-7">
+                <div class="p-details">
+                    <span style="display:none" class="productId">@Model.ProductHeaderId</span>
+                    <h1 class="p-header font-weight-bold">@Model.ProductName</h1>
+                    <h3 class="p-code">Product Code: @Model.ProductCode</h3>
+                    <span class="rating-decs">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        Be the first to review the product
+                    </span>
+                    <h4 class="p-price">Tk @Model.Rate</h4>
+                    <div class="quantity">
+                        <div class="input-group spinner">
+                            <span class="qty">Quantity</span>
+                            &nbsp;&nbsp;&nbsp;<input type="text" class="form-control text-center qty-input" value="1">
+                            <div class="input-group-btn-vertical">
+                                <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                                <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn buy-btn"><i class="fas fa-cart-arrow-down"></i>Add to Cart</button>
+                    <span class="number">Call for Details: @ViewBag.CompanyMobileNumber</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="custom-spacing body-bg product-dec">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="header">Features & Specifications</h2>
+
+                <p class="discription">
+                    @Model.Description
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="custom-spacing body-bg details-dec">
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="text-center dec-wrapper">
+                    <div class="icons"> <img src="https://priyoshop.com/content/images/thumbs/0124322_skmei-quartz-belt-watch-for-women-6911pn_100.png" /> </div>
+                    <h6 class="dec-head">RETURN POLICY </h6>
+                    <span class="head-dec">7 Days easy return </span>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="text-center dec-wrapper">
+                    <div class="icons"> <img src="https://priyoshop.com/content/images/thumbs/0124324_skmei-quartz-belt-watch-for-women-6911pn_100.png" /></div>
+                    <h6 class="dec-head">DELIVERED BY </h6>
+                    <span class="head-dec">Usually in 1-5 business days </span>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="text-center dec-wrapper">
+                    <div class="icons"> <img src="https://priyoshop.com/content/images/thumbs/0124323_skmei-quartz-belt-watch-for-women-6911pn_100.png" /> </div>
+                    <h6 class="dec-head">ORDER BY CALL </h6>
+                    <span class="head-dec">@ViewBag.CompanyMobileNumber </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>*@
+
+@section scripts{
+    <script type="text/javascript" src="https://cdn.rawgit.com/igorlino/elevatezoom-plus/1.1.6/src/jquery.ez-plus.js"></script>
+    <script>
+        (function ($) {
+            $('.spinner .btn:first-of-type').on('click', function () {
+                $('.spinner input').val(parseInt($('.spinner input').val(), 10) + 1);
+            });
+            $('.spinner .btn:last-of-type').on('click', function () {
+                if ($('.spinner input').val() == 0) {
+                    $('.spinner input').val(0);
+                }
+                else {
+                    $('.spinner input').val(parseInt($('.spinner input').val(), 10) - 1);
+                }
+            });
+        })(jQuery);
+
+        $("#zoom_01").ezPlus();
+
+        $('.buy-btn').click(function () {
+            debugger;
+            alert('Successfully added to cart');
+            products = jQuery.parseJSON(localStorage.getItem('products'));
+            var productId = $(this).parent().find('.productId').html();
+            var qty = $(this).parent().find('.qty-input').val();
+            if (products != null) {
+                var existingProduct = products.filter(f => f.ProductHeaderId == productId);
+                if (existingProduct != undefined) {
+                    products = products.filter(f => f.ProductHeaderId != productId);
+                }
+            } else {
+                products = [];
+            }
+            var product = { ProductHeaderId: productId, Quantity: qty };
+            products.push(product);
+            localStorage.setItem('products', JSON.stringify(products));
+            CartCount();
+        });
+    </script>
+}

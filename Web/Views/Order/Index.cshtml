@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "Order List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4 class="text-center">Order List</h4>
+<div class="card-custom">
+    <table id="OrderTable" class="table table-hover">
+        <thead>
+            <tr>
+                <th>SN</th>
+                <th>Order ID</th>
+                <th>Order Date</th>
+                <th>Customer</th>
+                <th>Mobile Number</th>
+                <th>Address</th>
+                <th>Items</th>
+                <th>Total Price</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+@section scripts{
+    <script>
+    var successMsg = '@TempData["SuccessMsg"]';
+    var failedMsg = '@TempData["FailedMsg"]';
+    $(document).ready(function () {
+        if (successMsg != null && successMsg != "" && typeof successMsg != "undefined") {
+            alert(successMsg);
+        }
+        if (failedMsg != null && failedMsg != "" && typeof failedMsg != "undefined") {
+            alert(failedMsg);
+        }
+        $('#OrderTable').DataTable({
+            "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
+            "pageLength": 25,
+            "processing": true,
+            "serverSide": false,
+            "ordering": false,
+            "ajax": "/Order/AjaxOrderList",
+            "columns": [
+                { "data": "OrderHeaderId" },
+                { "data": "OrderNo" },
+                { "data": "Date" },
+                { "data": "CustomerName" },
+                { "data": "Mobile" },
+                { "data": "Address" },
+                { "data": "Items" },
+                { "data": "Price" },
+                { "data": "Status" },
+                {
+                    "render": function (data, type, row) {
+                        return "<a href='/Order/AdminDetails/" + row.OrderHeaderId + "'><button type='button' class='btn btn-primary'>Details</Button></a>";
+                    },
+                }
+            ]
+        });
+    });
+    </script>
+}
+
+
+

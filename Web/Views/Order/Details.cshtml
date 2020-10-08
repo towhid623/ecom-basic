@@ -1,0 +1,45 @@
+﻿@model Entities.Models.Order
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPublic.cshtml";
+}
+<br />
+<section class="custom-spacing body-bg">
+    <div class="p-category wrapper container custom-spacing">
+        <h6 style="text-align: center;color:#4a00a4;font-size: 18px;">
+            <b>
+                <i class="fa fa-gg" aria-hidden="true"></i>
+                INVOICE #@Model.OrderNo
+                <i class="fa fa-gg" aria-hidden="true"></i>
+            </b>
+        </h6>
+        <div class="row">
+            <table class="table table-bordered table-hover">
+                <thead class="bg-info white-font-color">
+                    <tr>
+                        <td>Product Code</td>
+                        <td>Product Name</td>
+                        <td>Quantity</td>
+                        <td>Rate</td>
+                        <td>Total</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.OrderItem)
+                    {
+                        <tr>
+                            <td>@item.Product.ProductCode</td>
+                            <td>@item.Product.ProductName</td>
+                            <td>
+                                @item.Quantity
+                            </td>
+                            <td>@item.Rate</td>
+                            <td>@item.Total</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+

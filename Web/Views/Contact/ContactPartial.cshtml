@@ -1,0 +1,35 @@
+﻿@model Service.ViewModels.VmContact
+@{
+    Layout = null;
+}
+
+@using (Ajax.BeginForm("Contact", "Contact", null, new AjaxOptions
+{
+    HttpMethod = "POST",
+    OnSuccess = "SuccessMessage",
+    OnFailure = "FailMessage",
+    UpdateTargetId = "resultTarget"
+}, new { id = "contactForm" })) // set new Id name for  Form
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <dl class="row">
+        <dt class="col-sm-4 mb-3">Name*</dt>
+        <dd class="col-sm-8 mb-3"><input type="text" placeholder="Name" name="Name" class="form-control rounded-0 border-0">@Html.ValidationMessageFor(model => model.Name)</dd>
+
+        <dt class="col-sm-4 mb-3">Email*</dt>
+        <dd class="col-sm-8 mb-3"><input type="email" placeholder="Email" name="Email" class="form-control rounded-0 border-0">@Html.ValidationMessageFor(model => model.Email)</dd>
+
+        <dt class="col-sm-4 mb-3">Subject*</dt>
+        <dd class="col-sm-8 mb-3"><input type="text" placeholder="Subject" name="Subject" class="form-control rounded-0 border-0">@Html.ValidationMessageFor(model => model.Subject)</dd>
+
+        <dt class="col-sm-4 mb-3">Mobile Number*</dt>
+        <dd class="col-sm-8 mb-3"><input type="text" placeholder="Mobile Number" name="MobileNumber" class="form-control rounded-0 border-0">@Html.ValidationMessageFor(model => model.MobileNumber)</dd>
+
+        <dt class="col-sm-4 mb-3">Message*</dt>
+        <dd class="col-sm-8 mb-3"><input type="text" placeholder="Message" name="Message" class="form-control rounded-0 border-0">@Html.ValidationMessageFor(model => model.Message)</dd>
+
+
+        <dd class="col-sm-12"><input type="submit" value="SUBMIT" class=" rounded-2 border-0 bg-info text-light" style="float:  right;padding: 1% 2%;border-radius: 6px;"></dd>
+    </dl>
+}

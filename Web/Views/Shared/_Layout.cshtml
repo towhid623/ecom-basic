@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>@ViewBag.Title</title>
+    @*@Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")*@
+    <link href="~/Content/Layout/animate.min.css" rel="stylesheet" />
+    <link href="~/Content/Layout/demo.css" rel="stylesheet" />
+    <link href="~/Content/Layout/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Layout/light-bootstrap-dashboard.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.12/sweetalert2.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <script src="https://kit.fontawesome.com/3fe98187d7.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.19/css/dataTables.material.min.css" rel="stylesheet">
+    <link href="~/Content/Layout/admin-style.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/Layout/custom.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar" data-color="azure" data-image="/Images/pertol.jpg">
+            <!--
+
+                Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
+                Tip 2: you can also add an image using data-image tag
+
+            -->
+
+            <div class="sidebar-wrapper">
+                <div class="logo">
+                    <a href="~/Company/Add" class="simple-text">
+                        Company
+                    </a>
+                </div>
+
+                <ul class="nav">
+                    <li>
+                        <a href="~/Unit/Index">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <p>Unit</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="~/Brand/Index">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Brand</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="~/ProductCategory/Index">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Category</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="~/ProductSubCategory/Index">
+                            <i class="fas fa-tint"></i>
+                            <p>Sub-Category</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="~/Product/Index">
+                            <i class="fas fa-store"></i>
+                            <p>Product</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="~/Banner/Index">
+                            <i class="fas fa-photo-video"></i>
+                            <p>Banner</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="~/Order/Index">
+                            <i class="fas fa-truck"></i>
+                            <p>Order</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-panel">
+            <nav class="navbar navbar-default navbar-fixed">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">@ViewBag.Title</a>
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { @id = "", enctype = "multipart/form-data", autocomplete = "off" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <ul class="nav">
+                                        <li>
+                                            <a href="javascript-void(0)">
+                                                <button type="submit">Sign Out</button>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                }
+                                @*<a href="~/Account/LogOff">
+                                        <p>Log out</p>
+                                    </a>*@
+                            </li>
+                            <li class="separator hidden-lg"></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            @RenderBody()
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <p class="copyright pull-right">
+                        &copy;
+                        <script>document.write(new Date().getFullYear())</script>
+                    </p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")*@
+    <script src="~/Scripts/Layout/jquery.3.2.1.min.js"></script>
+    <script src="~/Scripts/Layout/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8.2.6/dist/sweetalert2.all.min.js"></script>
+    <script src="~/Scripts/Layout/chartist.min.js"></script>
+    <script src="~/Scripts/Layout/bootstrap-notify.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/Layout/light-bootstrap-dashboard.js"></script>
+    <script src="~/Scripts/Layout/demo.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            demo.initChartist();
+            $.notify({
+                icon: '',
+                message: "Welcome to <b>E-Commerce</b>"
+            }, {
+                    type: 'info',
+                    timer: 300
+                });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var url = window.location;
+            $('ul.nav a[href="' + url + '"]').parent().addClass('active');
+            $('ul.nav a').filter(function () {
+                return this.href == url;
+            }).parent().addClass('active');
+        });
+    </script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,95 @@
+﻿@model Service.ViewModels.VmCompanyAdd
+@{
+    ViewBag.Title = "Company";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card-custom">
+    <h4 class="text-center">Company Information</h4>
+
+    @using (Html.BeginForm("Add", "Company", FormMethod.Post, new { @id = "mainForm", enctype = "multipart/form-data", @autocomplete = "off", onSubmit = "return ValidateFormData()" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="row form-group">
+        <div class="col-sm-4 form-group">
+            <label>Company Name</label>
+            @Html.HiddenFor(model => model.CompanyHeaderId, new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-sm-4 form-group">
+            <label>Mobile Number</label>
+            @Html.TextBoxFor(model => model.MobileNumber, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.MobileNumber, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-sm-4 form-group">
+            <label>Secondary Mobile Number</label>
+            @Html.TextBoxFor(model => model.MobileNumberOptional, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.MobileNumberOptional, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-sm-4 form-group">
+            <label>Email Address</label>
+            @Html.TextBoxFor(model => model.EmailAddress, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.EmailAddress, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-sm-4 form-group">
+            <label>Facebook URL</label>
+            @Html.TextBoxFor(model => model.FacebookUrl, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.FacebookUrl, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-sm-4 form-group">
+            <label>Instagram URL</label>
+            @Html.TextBoxFor(model => model.InstagramUrl, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.InstagramUrl, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-sm-4 form-group">
+            <label>Twitter URL</label>
+            @Html.TextBoxFor(model => model.TwitterUrl, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.TwitterUrl, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-sm-4 form-group">
+            <label>Website URL</label>
+            @Html.TextBoxFor(model => model.WebsiteUrl, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.WebsiteUrl, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-sm-4 form-group">
+            <label>Phone Number</label>
+            @Html.TextBoxFor(model => model.PhoneNumber, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-sm-4 form-group">
+            <label>Logo</label>
+            <input type="file" name="Logo" class="form-control" />
+        </div>
+        <div class="col-sm-4 form-group">
+            <label>Signature</label>
+            <input type="file" name="Signature" class="form-control"  />
+        </div>
+        <div class="col-sm-12 form-group">
+            <label>Address</label>
+            @Html.TextAreaFor(model => model.Address, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+        </div>
+    </div>
+        <div class="text-right">
+            <button class="btn btn-success" type="submit">Submit</button>
+        </div>
+    }
+</div>
+@section scripts{
+    <script>
+    var successMsg = '@TempData["SuccessMsg"]';
+    var failedMsg = '@TempData["FailedMsg"]';
+    $(document).ready(function () {
+        if (successMsg != null && successMsg != "" && typeof successMsg != "undefined") {
+            alert(successMsg);
+        }
+        if (failedMsg != null && failedMsg != "" && typeof failedMsg != "undefined") {
+            alert(failedMsg);
+        }
+    });
+    </script>
+}
+

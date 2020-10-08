@@ -1,0 +1,36 @@
+﻿@model Service.ViewModels.VmBanner
+@{
+    ViewBag.Title = "Add Banner";
+}
+
+<div class="card-custom">
+    <h4 class="text-center">Add Banner</h4>
+    @using (Html.BeginForm("Add", "Banner", FormMethod.Post, new { @id = "mainForm", enctype = "multipart/form-data", @autocomplete = "off", onSubmit = "return ValidateFormData()" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="row form-group">
+            <div class="col-sm-4">
+                <label>Banner Image</label>
+                <input type="file" name="BannerFile" class="form-control" />
+            </div>
+            <div class="col-sm-8">
+                <label>Title</label>
+                @Html.TextBoxFor(model => model.BannerTitle, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.BannerTitle, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-12">
+                <label>Description</label>
+                @Html.TextAreaFor(model => model.BannerDescription, new { @class = "form-control", rows = "2" })
+                @Html.ValidationMessageFor(model => model.BannerDescription, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="text-right">
+            <button class="btn btn-success" type="submit">Submit</button>
+        </div>
+        <div class="clearfix"></div>
+    }
+</div>
+

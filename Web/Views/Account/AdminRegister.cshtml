@@ -1,0 +1,102 @@
+﻿@model Web.Models.AdminRegisterViewModel
+@{
+    ViewBag.Title = "Register";
+    Layout = null;
+}
+
+@*<section class="custom-spacing body-bg">
+        <div class="p-category wrapper container custom-spacing">
+            <h1 class="header text-center">Register</h1>
+            <div class="w-100 custom-spacing" id="loginForm">
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary("", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Name, new { @class = "control-label" })
+                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Mobile, new { @class = "control-label" })
+                        @Html.TextBoxFor(m => m.Mobile, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "control-label" })
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Address, new { @class = "control-label" })
+                        @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group text-right">
+                        <input type="submit" value="Register" class="btn btn-outline-primary primary-font-color my-2 my-sm-0 primary-color-bg" />
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@
+
+
+<link href="~/Content/Layout/animate.min.css" rel="stylesheet" />
+<link href="~/Content/Layout/demo.css" rel="stylesheet" />
+<link href="~/Content/Layout/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/Layout/light-bootstrap-dashboard.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.12/sweetalert2.min.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+<script src="https://kit.fontawesome.com/3fe98187d7.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css" rel="stylesheet">
+<link href="https://cdn.datatables.net/1.10.19/css/dataTables.material.min.css" rel="stylesheet">
+<link href="~/Content/Layout/admin-style.css" rel="stylesheet" />
+<link href="~/Content/Site.css" rel="stylesheet" />
+<link href="~/Content/Layout/custom.css" rel="stylesheet" />
+<div class="card-custom container">
+    <h4 class="text-center">Register</h4>
+
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="row">
+            <div class="col-sm-12 form-group">
+                @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-12 form-group">
+                @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-12 form-group">
+                @Html.LabelFor(m => m.ConfirmPassword, new { @class = "control-label" })
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="text-right">
+            <button class="btn btn-success" type="submit">Register</button>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script src="~/Scripts/Layout/jquery.3.2.1.min.js"></script>
+    <script src="~/Scripts/Layout/bootstrap.min.js"></script>
+    <script src="~/Scripts/Layout/chartist.min.js"></script>
+    <script src="~/Scripts/Layout/bootstrap-notify.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/Layout/light-bootstrap-dashboard.js"></script>
+    <script src="~/Scripts/Layout/demo.js"></script>
+    @Scripts.Render("~/bundles/jqueryval")
+}

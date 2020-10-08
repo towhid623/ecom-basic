@@ -1,0 +1,57 @@
+﻿@using Web.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+    Layout = "~/Views/Shared/_LayoutPublic.cshtml";
+}
+<br />
+<section class="custom-spacing body-bg">
+    <div class="p-category wrapper container custom-spacing">
+        <h6 style="text-align: center;color:#4a00a4;font-size: 18px;">
+            <b>
+                <i class="fa fa-gg" aria-hidden="true"></i>
+                Log In
+                <i class="fa fa-gg" aria-hidden="true"></i>
+            </b>
+        </h6>
+        <div class="w-100 custom-spacing" id="loginForm">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group w-100">
+                    @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        @Html.CheckBoxFor(m => m.RememberMe)
+                        @Html.LabelFor(m => m.RememberMe)
+                    </div>
+                </div>
+                <div class="form-group text-right">
+                    <input type="submit" value="Log in" class="btn btn-outline-primary primary-font-color my-2 my-sm-0 primary-color-bg" />
+                </div>
+                <p>
+                    @Html.ActionLink("Register A New Customer", "Register")
+                </p>
+            }
+        </div>
+    </div>
+</section>
+<br />
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

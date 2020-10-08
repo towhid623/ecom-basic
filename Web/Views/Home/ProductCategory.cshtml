@@ -1,0 +1,70 @@
+﻿@model Entities.Models.ProductCategory
+@{
+    ViewBag.Title = "Product List";
+    Layout = "~/Views/Shared/_LayoutPublic.cshtml";
+}
+@*<section class="custom-spacing body-bg">
+        @foreach (var subCategory in Model.ProductSubCategories)
+        {
+            <div class="p-category wrapper container custom-spacing">
+                <h1 class="header text-center">@subCategory.ProductSubCategoryName</h1>
+                <div class="row">
+                    @foreach (var product in subCategory.Products)
+                    {
+                        <div class="col-sm-3 spacing">
+                            <a href="/Home/Product/@product.ProductHeaderId" class="img_page">
+
+                                <div class="card custom-card">
+                                    <img class="p_img" src="@product.ImageUrl1" alt="Image Not Found" />
+                                    <p class="product-name">@product.ProductName</p>
+                                    <h4 class="p-price">Tk @product.Rate</h4>
+                                </div>
+                            </a>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    </section>*@
+
+<br />
+@foreach (var subCategory in Model.ProductSubCategories)
+{
+    <div class="container">
+        <h6 style="text-align: center;color:#4a00a4;font-size: 18px;">
+            <b>
+                <i class="fa fa-gg" aria-hidden="true"></i>
+                @subCategory.ProductSubCategoryName
+                <i class="fa fa-gg" aria-hidden="true"></i>
+            </b>
+        </h6>
+    </div>
+    <br>
+    <div class="container">
+        <div class="row">
+            @foreach (var product in subCategory.Products)
+            {
+                <div class="col-md-3 spacing">
+                    <a href="/Home/Product/@product.ProductHeaderId" class="black-font-color">
+                        <div class="card" style="width: 100%;">
+                            <div class="hvrbox">
+                                <img src="@product.ImageUrl1" alt="Mountains" class="hvrbox-layer_bottom" width="100%" style="height: 100%;">
+                                <div class="hvrbox-layer_top">
+                                    <div class="hvrbox-text">
+                                        <span style="font-size: xxx-large;color:white;"><i class="fa fa-eye" aria-hidden="true"></i></span>
+                                        <p>VIEW DETAILS</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <P class="card-title"><b>@product.ProductName</b></P>
+                                <p class="card-text">Tk @product.Rate</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+    <br>
+}

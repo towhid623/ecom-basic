@@ -1,0 +1,59 @@
+﻿@model Web.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_LayoutPublic.cshtml";
+
+}
+
+<br />
+<section class="custom-spacing body-bg">
+    <div class="p-category wrapper container custom-spacing">
+        <h6 style="text-align: center;color:#4a00a4;font-size: 18px;">
+            <b>
+                <i class="fa fa-gg" aria-hidden="true"></i>
+                Register
+                <i class="fa fa-gg" aria-hidden="true"></i>
+            </b>
+        </h6>
+        <div class="w-100 custom-spacing" id="loginForm">
+            @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary("", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Name, new { @class = "control-label" })
+                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Mobile, new { @class = "control-label" })
+                    @Html.TextBoxFor(m => m.Mobile, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.ConfirmPassword, new { @class = "control-label" })
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Address, new { @class = "control-label" })
+                    @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+                </div>
+                <div class="form-group text-right">
+                    <input type="submit" value="Register" class="btn btn-outline-primary primary-font-color my-2 my-sm-0 primary-color-bg" />
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<br />
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "Sub-Category";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4 class="text-center">Sub-Category</h4>
+<div class="card-custom text-right">
+    <a href="/ProductSubCategory/Add">
+        <button class="btn btn-primary mb-3" type="button">Add Sub-Category</button>
+    </a>
+    <table id="SubCategoryTable" class="table table-hover text-center">
+        <thead>
+            <tr>
+                <th>SN</th>
+                <th>Category</th>
+                <th>Sub-Category</th>
+                <th>Image</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+@section scripts{
+    <script>
+    var successMsg = '@TempData["SuccessMsg"]';
+    var failedMsg = '@TempData["FailedMsg"]';
+    $(document).ready(function () {
+        if (successMsg != null && successMsg != "" && typeof successMsg != "undefined") {
+            alert(successMsg);
+        }
+        if (failedMsg != null && failedMsg != "" && typeof failedMsg != "undefined") {
+            alert(failedMsg);
+        }
+
+
+            $('#SubCategoryTable').DataTable({
+                "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
+                "pageLength": 25,
+                "processing": true,
+                "serverSide": true,
+                "ordering": false,
+                "ajax": "/ProductSubCategory/AjaxSubCategoryList",
+                "columns": [
+                    { "data": "ProductSubCategoryHeaderId" },
+                    { "data": "ProductCategoryName" },
+                    { "data": "ProductSubCategoryName" },
+                    {
+                        "render": function (data, type, row) {
+                            if (row.ImageUrl == null)
+                                return "";
+                            else
+                                return "<img src='" + row.ImageUrl + "' class='datatable-image'/>";
+                        },
+                    },
+                    {
+                        "render": function (data, type, row) {
+                            return "<a href='/ProductSubCategory/Edit/" + row.ProductSubCategoryHeaderId + "'><button type='button' class='btn btn-primary'>Edit</Button></a> <a href='/ProductSubCategory/Delete/" + row.ProductSubCategoryHeaderId +"'><button type='button' class='btn btn-danger'>Delete</Button></a>";
+                        },
+                    }
+                ]
+            });
+    });
+    </script>
+}
+
+

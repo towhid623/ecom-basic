@@ -1,0 +1,50 @@
+﻿.padding-xy{
+    padding:30px;
+}
+.gap{
+    height:30px;
+}
+.item-list th {
+    text-align:center !important;
+}
+div.dataTables_wrapper div.dataTables_info, div.dataTables_wrapper div.dataTables_paginate, .dataTables_length, .dataTables_filter {
+    padding: 10px !important;
+}
+
+
+
+.modal-backdrop {
+    z-index: -1 !important;
+}
+.modal-open .card{
+    opacity:.5 !important;
+}
+sub{
+    color:red;
+}
+.pagination > .active > a {
+    background-color: #1DC7EA;
+    border-color: #1DC7EA;
+}
+.item-add-btn {
+    margin-top: 10px;
+}
+#itemAddTable{
+    width:100%;
+}
+    #itemAddTable tr td{
+        padding: 0px 7.5px;
+    }
+        #itemAddTable tr td:first-child {
+            padding-left: 0px;
+        }
+        #itemAddTable tr td:last-child {
+            padding-right: 0px;
+        }
+.card label {
+    font-weight: 500;
+    color: #777;
+}
+
+
+
